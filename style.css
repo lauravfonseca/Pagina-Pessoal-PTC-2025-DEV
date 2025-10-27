@@ -1,59 +1,35 @@
 /* --- Configuração Global (Tema Spotify) --- */
 body {
+  /* Cor de fundo principal do Spotify */
   background-color: #121212; 
+  
+  /* Cor da fonte principal */
   color: #ffffff; 
+  
+  /* Fonte mais parecida com a do Spotify */
   font-family: 'Montserrat', sans-serif; 
+  
   margin: 0;
   padding: 0;
-  min-height: 100vh; 
-  display: grid; /* Usaremos Grid diretamente no body */
-  /* Define 3 colunas para o layout principal:
-     - 70px para a sidebar esquerda (vazia)
-     - 1fr para o conteúdo central
-     - 300px para a sidebar direita (música da vida)
-  */
-  grid-template-columns: 70px 1fr 300px; 
-  grid-template-rows: 1fr; /* Apenas uma linha para todo o conteúdo */
-  width: 100vw; /* Ocupa 100% da largura da viewport */
-  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
-/* --- Áreas do Grid --- */
-.sidebar-esquerda {
-    background-color: #000; 
-    grid-column: 1 / 2; /* Ocupa a primeira coluna */
-    display: none; /* Escondendo por enquanto, já que está vazia */
-}
-
-.conteudo-central {
-    background-color: #121212; 
-    grid-column: 2 / 3; /* Ocupa a segunda coluna */
-    overflow-y: auto; /* Permite scroll vertical */
-    padding-bottom: 50px; 
-}
-
-.sidebar-direita {
-    background-color: #000; 
-    grid-column: 3 / 4; /* Ocupa a terceira coluna */
-    overflow-y: auto; 
-    padding: 20px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1); 
-}
-
-/* --- 1. Cabeçalho do Perfil --- */
+/* --- 1. Cabeçalho do Perfil (Novo) --- */
 .perfil-header {
+  /* O gradiente escuro do topo (como no seu print) */
   background: linear-gradient(180deg, #4a2a1f 0%, #121212 100%);
-  display: flex;
-  align-items: center;
-  padding: 60px 40px 40px 40px; 
-  gap: 20px; 
+  
+  display: flex; /* Para alinhar a foto ao lado do texto */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 60px 40px 40px 40px; /* Espaçamento interno */
+  gap: 20px; /* Espaço entre a foto e o texto */
 }
 
 .foto-perfil {
-  width: 200px; 
-  height: 200px;
-  border-radius: 50%; 
+  width: 240px; /* Tamanho da foto */
+  height: 240px;
+  border-radius: 50%; /* Deixa redonda */
   object-fit: cover;
+  /* Sombra sutil que o Spotify usa */
   box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); 
 }
 
@@ -68,24 +44,24 @@ body {
 }
 
 .perfil-header h1 {
-  font-size: 5rem; 
-  font-weight: 900; 
+  font-size: 5rem; /* Fonte bem grande */
+  font-weight: 900; /* Bem "gorda" (bold) */
   margin: 10px 0;
-  letter-spacing: -2px; 
+  letter-spacing: -2px; /* Espaço entre letras mais justo */
 }
 
 .perfil-stats {
   font-size: 0.9em;
   margin: 0;
-  color: #b3b3b3; 
+  color: #b3b3b3; /* Cinza claro do Spotify */
 }
 
-/* --- Conteúdo Principal (Wrapper para as seções) --- */
-.secoes-principais {
-  padding: 0 40px; 
+/* --- Conteúdo Principal (Wrapper) --- */
+.conteudo-principal {
+  padding: 0 40px; /* Mesmo espaçamento lateral do header */
 }
 
-/* --- 2. Seção Felicidade --- */
+/* --- 2. Seção Felicidade (Re-estilizada) --- */
 .felicidade {
   margin-top: 40px;
 }
@@ -93,37 +69,31 @@ body {
 .felicidade h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
-  text-align: left; 
 }
 
 .itens {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start; /* Alinha à esquerda */
   flex-wrap: wrap;
-  gap: 25px; 
+  gap: 25px; /* Espaçamento entre os círculos */
 }
 
 .item {
-  width: 180px; 
+  width: 190px; /* Largura de cada item */
   text-align: center;
 }
 
 .item img {
-  width: 180px; 
-  height: 180px; 
-  border-radius: 50%; 
+  width: 190px;
+  height: 190px;
+  border-radius: 50%; /* Redondinho como no Spotify */
   object-fit: cover;
   transition: transform 0.2s ease;
   cursor: pointer;
 }
 
 .item img:hover {
-  transform: scale(1.05); 
-}
-
-/* Ajuste para a foto de Viajar */
-.img-viajar {
-  object-position: 50% 80%; 
+  transform: scale(1.05); /* Efeito de zoom sutil */
 }
 
 .item p {
@@ -132,23 +102,22 @@ body {
   font-weight: 700;
 }
 
-/* --- 3. Seção Cantores --- */
+/* --- 3. Seção Cantores (Seu código, com pequenos ajustes) --- */
 .cantores {
   margin-top: 50px;
-  padding-bottom: 50px; 
+  padding-bottom: 50px; /* Espaço no fim da página */
 }
 
 .cantores h2 {
   font-size: 1.5em;
   margin-bottom: 25px;
   font-weight: 700;
-  text-align: left; 
 }
 
 .lista-cantores {
   display: flex;
   flex-direction: column;
-  gap: 15px; 
+  gap: 15px; /* Diminuí um pouco o espaço */
 }
 
 .cantor {
@@ -161,14 +130,14 @@ body {
 }
 
 .cantor:hover {
-  background: rgba(255, 255, 255, 0.08); 
+  background: rgba(255, 255, 255, 0.08); /* Fundo sutil no hover */
   cursor: pointer;
 }
 
 .cantor img {
-  width: 100px; 
-  height: 100px; 
-  border-radius: 8px; 
+  width: 120px; /* Ajustei o tamanho */
+  height: 120px;
+  border-radius: 8px; /* Cantos suaves */
   object-fit: cover;
 }
 
@@ -177,158 +146,55 @@ body {
 }
 
 .cantor-info h3 {
-  font-size: 1.3em; 
+  font-size: 1.3em;
   margin: 0;
   font-weight: 700;
 }
 
 .cantor-info p {
-  font-size: 1.0em; 
+  font-size: 1.0em;
   margin: 4px 0 0 0;
-  color: #b3b3b3; 
+  color: #b3b3b3; /* Cor cinza do Spotify */
 }
 
-/* --- 4. Sidebar Direita (Música da Minha Vida) --- */
-.sidebar-direita h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    margin-bottom: 5px;
-    text-align: left;
-    margin-top: 0;
+/* Ajuste para a foto de Viajar */
+.img-viajar {
+  object-position: 50% 80%; /* O primeiro valor é horizontal, o segundo é vertical */
 }
 
-.sidebar-direita .musica-artista {
-    font-size: 0.9em;
-    color: #b3b3b3;
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: left;
+/* --- 4. Seção Música da Vida (Novo) --- */
+.musica-vida {
+  margin-top: 50px; /* Espaço da seção de cima */
+  padding-bottom: 50px; /* Espaço no fim da página */
+  text-align: center; /* Centraliza os títulos */
 }
 
-.musica-vida-card {
-    background-color: #1a1a1a; 
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px; 
-    text-align: left; 
+.musica-vida h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 5px; /* Menos espaço para o subtítulo */
+  text-align: left; /* Alinha o título principal à esquerda, como os outros */
 }
 
-.musica-vida-card.relacionados {
-    background-color: transparent; 
-    padding: 0;
-    margin-bottom: 0;
+.musica-vida .subtitulo-secao {
+  font-size: 0.9em;
+  color: #b3b3b3; /* Cor cinza do Spotify */
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: left; /* Alinha o subtítulo à esquerda */
 }
 
-.musica-vida-card .capa-musica {
-    width: 100%; 
-    border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+/* Container para o player */
+.spotify-embed {
+  /* O player do Spotify já vem com 100% de largura */
+  max-width: 700px; /* Limita a largura máxima dele */
+  margin: 0 auto; /* Centraliza o container do player */
 }
 
-.musica-vida-card .musica-descricao {
-    font-size: 0.85em;
-    color: #b3b3b3;
-    margin-top: 10px;
-    line-height: 1.4;
-}
-
-/* Estilo para a lista de itens relacionados */
-.lista-relacionados {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.item-relacionado {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    padding: 5px; 
-    border-radius: 8px;
-}
-
-.item-relacionado:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-.item-relacionado img {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px; /* Imagens quadradas com cantos arredondados */
-    object-fit: cover;
-}
-
-.item-relacionado .info-relacionado {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.item-relacionado .info-relacionado p {
-    margin: 0;
-    font-size: 0.9em;
-    font-weight: 600;
-}
-
-.item-relacionado .info-relacionado span {
-    font-size: 0.8em;
-    color: #b3b3b3;
-}
-
-
-/* Responsividade para telas menores */
-@media (max-width: 1200px) {
-  body {
-    grid-template-columns: 1fr 280px; /* Remove a sidebar esquerda e ajusta a direita */
-  }
-  .sidebar-esquerda {
-      display: none;
-  }
-  /* Ajusta o padding do conteúdo central para compensar a sidebar esquerda */
-  .conteudo-central {
-      padding-left: 20px; 
-  }
-  .perfil-header {
-      padding-left: 20px;
-  }
-  .secoes-principais {
-      padding-left: 0; /* Já ajustado no .conteudo-central */
-      padding-right: 20px; /* Mantém um padding na direita */
-  }
-}
-
-@media (max-width: 800px) {
-  body {
-    grid-template-columns: 1fr; /* Apenas uma única coluna */
-    grid-template-rows: auto auto auto; /* Para as seções ficarem uma abaixo da outra */
-  }
-  .sidebar-esquerda, .sidebar-direita {
-    display: none; /* Esconde as barras laterais em telas pequenas */
-  }
-  .conteudo-central {
-    grid-column: 1 / 2; /* Ocupa a única coluna */
-    padding: 20px; /* Padding geral para o conteúdo central */
-  }
-  .perfil-header {
-      flex-direction: column;
-      text-align: center;
-      padding: 40px 20px;
-  }
-  .perfil-info {
-      text-align: center;
-      margin-top: 20px;
-  }
-  .perfil-header h1 {
-      font-size: 3rem;
-  }
-  .secoes-principais {
-      padding: 0; /* Conteúdo central já tem padding */
-  }
-  .itens {
-      justify-content: center;
-  }
+/* Isso garante que o player do Spotify fique bonito */
+.spotify-embed iframe {
+  border-radius: 12px; /* Deixa o player com cantos arredondados */
+  border: none;
+  width: 100%; /* Faz o player ocupar todo o espaço do container */
+  height: 152px; /* Altura padrão do player compacto */
 }
