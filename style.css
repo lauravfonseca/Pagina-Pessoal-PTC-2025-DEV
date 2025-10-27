@@ -5,44 +5,40 @@ body {
   font-family: 'Montserrat', sans-serif; 
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
-  display: flex; /* Para o main-layout ocupar todo o body */
-}
-
-/* --- Layout Principal com CSS Grid --- */
-.main-layout {
-  display: grid;
-  /* Define 3 colunas: 
-     - 230px para sidebar esquerda (como no Spotify)
-     - 1fr para o conteúdo central (ocupa o espaço restante)
-     - 300px para sidebar direita (para "Música da Minha Vida") 
+  min-height: 100vh; 
+  display: grid; /* Usaremos Grid diretamente no body */
+  /* Define 3 colunas para o layout principal:
+     - 70px para a sidebar esquerda (vazia)
+     - 1fr para o conteúdo central
+     - 300px para a sidebar direita (música da vida)
   */
-  grid-template-columns: 70px 1fr 300px; /* Adaptei para o seu caso */
-  grid-template-rows: 1fr; /* Apenas uma linha */
-  width: 100%;
+  grid-template-columns: 70px 1fr 300px; 
+  grid-template-rows: 1fr; /* Apenas uma linha para todo o conteúdo */
+  width: 100vw; /* Ocupa 100% da largura da viewport */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
-/* Esconde a sidebar esquerda por enquanto, já que ela está vazia */
+/* --- Áreas do Grid --- */
 .sidebar-esquerda {
-    background-color: #000; /* Cor escura */
-    /* Remove padding lateral para que o conteúdo encoste nas bordas laterais */
-    padding: 20px 0; 
-    display: none; /* Esconde a sidebar esquerda por enquanto */
+    background-color: #000; 
+    grid-column: 1 / 2; /* Ocupa a primeira coluna */
+    display: none; /* Escondendo por enquanto, já que está vazia */
 }
 
 .conteudo-central {
-  background-color: #121212; /* Fundo para o conteúdo principal */
-  overflow-y: auto; /* Permite scrollar o conteúdo central se for muito longo */
-  padding-bottom: 50px; /* Espaço no final para não "grudar" no player */
+    background-color: #121212; 
+    grid-column: 2 / 3; /* Ocupa a segunda coluna */
+    overflow-y: auto; /* Permite scroll vertical */
+    padding-bottom: 50px; 
 }
 
 .sidebar-direita {
-  background-color: #000; /* Cor escura */
-  padding: 20px;
-  overflow-y: auto; /* Permite scrollar a sidebar se for muito longa */
-  border-left: 1px solid rgba(255, 255, 255, 0.1); /* Uma linha divisória */
+    background-color: #000; 
+    grid-column: 3 / 4; /* Ocupa a terceira coluna */
+    overflow-y: auto; 
+    padding: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1); 
 }
-
 
 /* --- 1. Cabeçalho do Perfil --- */
 .perfil-header {
@@ -97,7 +93,7 @@ body {
 .felicidade h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
-  text-align: left; /* Garante alinhamento à esquerda */
+  text-align: left; 
 }
 
 .itens {
@@ -108,13 +104,13 @@ body {
 }
 
 .item {
-  width: 180px; /* Ajuste para o tamanho dos círculos */
+  width: 180px; 
   text-align: center;
 }
 
 .item img {
-  width: 180px; /* Ajuste para o tamanho dos círculos */
-  height: 180px; /* Ajuste para o tamanho dos círculos */
+  width: 180px; 
+  height: 180px; 
   border-radius: 50%; 
   object-fit: cover;
   transition: transform 0.2s ease;
@@ -127,7 +123,7 @@ body {
 
 /* Ajuste para a foto de Viajar */
 .img-viajar {
-  object-position: 50% 80%; /* Para mostrar mais a parte de baixo */
+  object-position: 50% 80%; 
 }
 
 .item p {
@@ -146,7 +142,7 @@ body {
   font-size: 1.5em;
   margin-bottom: 25px;
   font-weight: 700;
-  text-align: left; /* Garante alinhamento à esquerda */
+  text-align: left; 
 }
 
 .lista-cantores {
@@ -170,8 +166,8 @@ body {
 }
 
 .cantor img {
-  width: 100px; /* Aumentei para 100px */
-  height: 100px; /* Aumentei para 100px */
+  width: 100px; 
+  height: 100px; 
   border-radius: 8px; 
   object-fit: cover;
 }
@@ -181,13 +177,13 @@ body {
 }
 
 .cantor-info h3 {
-  font-size: 1.3em; /* Aumentei a fonte */
+  font-size: 1.3em; 
   margin: 0;
   font-weight: 700;
 }
 
 .cantor-info p {
-  font-size: 1.0em; /* Aumentei a fonte */
+  font-size: 1.0em; 
   margin: 4px 0 0 0;
   color: #b3b3b3; 
 }
@@ -210,21 +206,21 @@ body {
 }
 
 .musica-vida-card {
-    background-color: #1a1a1a; /* Fundo mais escuro para o card */
+    background-color: #1a1a1a; 
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px; /* Espaço entre os cards */
-    text-align: left; /* Alinha o texto dentro do card à esquerda */
+    margin-bottom: 20px; 
+    text-align: left; 
 }
 
 .musica-vida-card.relacionados {
-    background-color: transparent; /* Card de relacionados sem fundo */
+    background-color: transparent; 
     padding: 0;
     margin-bottom: 0;
 }
 
 .musica-vida-card .capa-musica {
-    width: 100%; /* Ocupa 100% da largura do card */
+    width: 100%; 
     border-radius: 8px;
     margin-bottom: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -251,7 +247,7 @@ body {
     gap: 15px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    padding: 5px; /* Adiciona um padding para a área do hover */
+    padding: 5px; 
     border-radius: 8px;
 }
 
@@ -262,7 +258,7 @@ body {
 .item-relacionado img {
     width: 50px;
     height: 50px;
-    border-radius: 4px;
+    border-radius: 4px; /* Imagens quadradas com cantos arredondados */
     object-fit: cover;
 }
 
@@ -284,22 +280,38 @@ body {
 }
 
 
-/* Responsividade básica para telas menores */
+/* Responsividade para telas menores */
 @media (max-width: 1200px) {
-  .main-layout {
-    grid-template-columns: 1fr 280px; /* Esconde a sidebar esquerda e diminui a direita */
+  body {
+    grid-template-columns: 1fr 280px; /* Remove a sidebar esquerda e ajusta a direita */
   }
   .sidebar-esquerda {
       display: none;
   }
+  /* Ajusta o padding do conteúdo central para compensar a sidebar esquerda */
+  .conteudo-central {
+      padding-left: 20px; 
+  }
+  .perfil-header {
+      padding-left: 20px;
+  }
+  .secoes-principais {
+      padding-left: 0; /* Já ajustado no .conteudo-central */
+      padding-right: 20px; /* Mantém um padding na direita */
+  }
 }
 
 @media (max-width: 800px) {
-  .main-layout {
-    grid-template-columns: 1fr; /* Uma única coluna */
+  body {
+    grid-template-columns: 1fr; /* Apenas uma única coluna */
+    grid-template-rows: auto auto auto; /* Para as seções ficarem uma abaixo da outra */
   }
-  .sidebar-direita {
-    display: none; /* Esconde a sidebar direita em telas pequenas */
+  .sidebar-esquerda, .sidebar-direita {
+    display: none; /* Esconde as barras laterais em telas pequenas */
+  }
+  .conteudo-central {
+    grid-column: 1 / 2; /* Ocupa a única coluna */
+    padding: 20px; /* Padding geral para o conteúdo central */
   }
   .perfil-header {
       flex-direction: column;
@@ -314,7 +326,7 @@ body {
       font-size: 3rem;
   }
   .secoes-principais {
-      padding: 0 20px;
+      padding: 0; /* Conteúdo central já tem padding */
   }
   .itens {
       justify-content: center;
