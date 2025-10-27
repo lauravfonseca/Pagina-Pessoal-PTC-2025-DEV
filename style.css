@@ -11,7 +11,41 @@ body {
   
   margin: 0;
   padding: 0;
+
+  /* MODIFICAÇÃO: Garante que a página ocupe 100% da altura e não role */
+  height: 100vh;
+  overflow: hidden;
 }
+
+/* --- NOVO: Layout Principal com Grid --- */
+.layout-container {
+  display: grid;
+  /* Define 2 colunas: 
+     1fr = O conteúdo principal (ocupa o espaço que sobrar)
+     300px = A sidebar da direita (tamanho fixo)
+  */
+  grid-template-columns: 1fr 300px;
+  width: 100vw;
+  height: 100vh; /* Ocupa 100% da altura da tela */
+}
+
+/* NOVO: Coluna principal que contém seu header e main */
+.coluna-principal {
+  /* Permite que SÓ esta coluna role, mantendo a sidebar fixa */
+  overflow-y: auto; 
+  height: 100vh;
+}
+
+/* NOVO: A sidebar da direita */
+.sidebar-direita {
+  background-color: #000;
+  padding: 20px;
+  overflow-y: auto; /* Permite que SÓ esta coluna role */
+  height: 100vh;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
 
 /* --- 1. Cabeçalho do Perfil (Novo) --- */
 .perfil-header {
@@ -162,39 +196,140 @@ body {
   object-position: 50% 80%; /* O primeiro valor é horizontal, o segundo é vertical */
 }
 
-/* --- 4. Seção Música da Vida (Novo) --- */
-.musica-vida {
-  margin-top: 50px; /* Espaço da seção de cima */
-  padding-bottom: 50px; /* Espaço no fim da página */
-  text-align: center; /* Centraliza os títulos */
+/* --- 4. NOVO: Estilos da Sidebar Direita --- */
+.sidebar-direita h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-top: 0;
 }
 
-.musica-vida h2 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 5px; /* Menos espaço para o subtítulo */
-  text-align: left; /* Alinha o título principal à esquerda, como os outros */
+.sidebar-direita .musica-artista {
+    font-size: 0.9em;
+    color: #b3b3b3;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.musica-vida .subtitulo-secao {
-  font-size: 0.9em;
-  color: #b3b3b3; /* Cor cinza do Spotify */
-  margin-top: 0;
-  margin-bottom: 25px;
-  text-align: left; /* Alinha o subtítulo à esquerda */
+.musica-vida-card {
+    background-color: #1a1a1a; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+    text-align: left; 
 }
 
-/* Container para o player */
-.spotify-embed {
-  /* O player do Spotify já vem com 100% de largura */
-  max-width: 700px; /* Limita a largura máxima dele */
-  margin: 0 auto; /* Centraliza o container do player */
+.musica-vida-card.relacionados {
+    background-color: transparent; 
+    padding: 0;
+    margin-bottom: 0;
 }
 
-/* Isso garante que o player do Spotify fique bonito */
-.spotify-embed iframe {
-  border-radius: 12px; /* Deixa o player com cantos arredondados */
-  border: none;
-  width: 100%; /* Faz o player ocupar todo o espaço do container */
-  height: 152px; /* Altura padrão do player compacto */
+.musica-vida-card .capa-musica {
+    width: 100%; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.musica-vida-card .musica-descricao {
+    font-size: 0.85em;
+    color: #b3b3b3;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* Estilo para a lista de itens relacionados */
+.lista-relacionados {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.item-relacionado {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 5px; 
+    border-radius: 8px;
+}
+
+.item-relacionado:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.item-relacionado img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px; 
+    object-fit: cover;
+}
+
+.item-relacionado .info-relacionado {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.item-relacionado .info-relacionado p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.item-relacionado .info-relacionado span {
+    font-size: 0.8em;
+    color: #b3b3b3;
+}
+
+/* --- NOVO: Responsividade --- */
+@media (max-width: 1024px) {
+  /* Em telas menores, volta a ser 1 coluna */
+  .layout-container {
+    grid-template-columns: 1fr; 
+    height: auto;
+  }
+  
+  .coluna-principal, .sidebar-direita {
+    height: auto; /* Altura automática */
+    overflow-y: visible; /* Scroll normal */
+  }
+
+  /* Esconde a sidebar em telas pequenas */
+  .sidebar-direita {
+    display: none; 
+  }
+
+  body {
+    height: auto;
+    overflow: auto; /* Permite o scroll normal da página */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Em telas de celular, muda o perfil para coluna */
+  .perfil-header {
+      flex-direction: column;
+      text-align: center;
+  }
+  .perfil-info {
+      text-align: center;
+      margin-top: 20px;
+  }
+  .perfil-header h1 {
+      font-size: 3rem;
+  }
+  .itens {
+      justify-content: center;
+  }
+  
+  .conteudo-principal, .perfil-header {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
 }
