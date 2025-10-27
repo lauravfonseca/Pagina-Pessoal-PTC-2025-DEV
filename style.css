@@ -25,8 +25,8 @@ body {
 }
 
 .foto-perfil {
-  width: 200px; /* Tamanho da foto */
-  height: 200px;
+  width: 240px; /* Tamanho da foto */
+  height: 240px;
   border-radius: 50%; /* Deixa redonda */
   object-fit: cover;
   /* Sombra sutil que o Spotify usa */
