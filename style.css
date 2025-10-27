@@ -135,8 +135,8 @@ body {
 }
 
 .cantor img {
-  width: 80px; /* Ajustei o tamanho */
-  height: 80px;
+  width: 120px; /* Ajustei o tamanho */
+  height: 120px;
   border-radius: 8px; /* Cantos suaves */
   object-fit: cover;
 }
@@ -146,13 +146,13 @@ body {
 }
 
 .cantor-info h3 {
-  font-size: 1.1em;
+  font-size: 1.3em;
   margin: 0;
   font-weight: 700;
 }
 
 .cantor-info p {
-  font-size: 0.9em;
+  font-size: 1.0em;
   margin: 4px 0 0 0;
   color: #b3b3b3; /* Cor cinza do Spotify */
 }
