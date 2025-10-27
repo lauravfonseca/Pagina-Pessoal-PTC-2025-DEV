@@ -1,136 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meu Site — Estilo Spotify</title>
-
-  <!-- Fonte (substitua se preferir) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Ícones simples (opcional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laura - O que me faz feliz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Container geral -->
-  <div class="app">
-    <!-- Sidebar (esquerda) -->
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="logo-circle">M</div>
-        <h1>MeuSite</h1>
-      </div>
-
-      <nav class="menu">
-        <a class="menu-item active"><i class="fa-solid fa-house"></i> Início</a>
-        <a class="menu-item"><i class="fa-solid fa-user"></i> Sobre</a>
-        <a class="menu-item"><i class="fa-solid fa-briefcase"></i> Portfólio</a>
-        <a class="menu-item"><i class="fa-solid fa-envelope"></i> Contato</a>
-      </nav>
-
-      <div class="sidebar-footer">
-        <div class="profile">
-          <img src="https://via.placeholder.com/48" alt="Foto" />
-          <div>
-            <strong>Laura Fonsêca</strong>
-            <small>@lauraf</small>
-          </div>
-        </div>
-        <button class="btn-cta">Me contrate</button>
-      </div>
-    </aside>
-
-    <!-- Conteúdo principal -->
-    <main class="main">
-      <!-- Header topo -->
-      <header class="topbar">
-        <div class="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="search" placeholder="Pesquisar projetos, posts..." />
-        </div>
-
-        <div class="top-actions">
-          <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
-          <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
-        </div>
-      </header>
-
-      <!-- Área de boas-vindas -->
-      <section class="hero">
-        <div class="hero-text">
-          <h2>Olá — sou <span>Laura</span></h2>
-          <p>Designer & Desenvolvedora front-end. Aqui você encontra meus projetos, artigos e formas de contato.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#portfolio">Ver portfólio</a>
-            <a class="btn btn-ghost" href="#sobre">Sobre mim</a>
-          </div>
-        </div>
-
-        <div class="hero-art">
-          <!-- Pode trocar por imagem sua -->
-          <img src="https://via.placeholder.com/320x200" alt="Arte" />
-        </div>
-      </section>
-
-      <!-- Cards de projetos (estilo playlists) -->
-      <section id="portfolio" class="grid-section">
-        <h3>Projetos</h3>
-        <div class="card-grid">
-          <!-- Card 1 -->
-          <article class="card">
-            <img src="https://via.placeholder.com/320x180" alt="Projeto 1" />
-            <div class="card-body">
-              <h4>Projeto A</h4>
-              <p>Site responsivo para uma startup de tecnologia — HTML, CSS, JS.</p>
-              <div class="card-actions">
-                <a class="mini-btn">Ver</a>
-                <a class="mini-btn">Código</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="card">
-            <img src="https://via.placeholder.com/320x180" alt="Projeto 2" />
-            <div class="card-body">
-              <h4>Projeto B</h4>
-              <p>Landing page com animações e microinterações.</p>
-              <div class="card-actions">
-                <a class="mini-btn">Ver</a>
-                <a class="mini-btn">Código</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="card">
-            <img src="https://via.placeholder.com/320x180" alt="Projeto 3" />
-            <div class="card-body">
-              <h4>Projeto C</h4>
-              <p>Aplicativo web para gerenciamento de tarefas.</p>
-              <div class="card-actions">
-                <a class="mini-btn">Ver</a>
-                <a class="mini-btn">Código</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Duplique cards conforme necessário -->
-        </div>
-      </section>
-
-      <!-- Rodapé simples -->
-      <footer class="footer">
-        <p>© <span id="year"></span> Laura Fonsêca — Feito com ♥ inspirado no design do Spotify</p>
-      </footer>
-    </main>
+  <div class="perfil">
+    <img src="IMG_9984.jpeg" alt="Foto de perfil" class="foto-perfil">
+    <h1>laura</h1>
   </div>
 
-  <script>
-    // Atualiza o ano automaticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <section class="felicidade">
+    <h2>O que me faz feliz...</h2>
+    <div class="itens">
+      <div class="item">
+        <img src="IMG_9763.png" alt="Viajar">
+        <p>Viajar</p>
+      </div>
+      <div class="item">
+        <img src="a9240509-46df-4a7c-ac54-8acfca7f1da6.jpeg" alt="Amigas">
+        <p>Amigas</p>
+      </div>
+      <div class="item">
+        <img src="IMG_5078.jpeg" alt="Mamãe">
+        <p>Mamãe</p>
+      </div>
+      <div class="item">
+        <img src="IMG_0114.jpeg" alt="Comer">
+        <p>Comer</p>
+      </div>
+      <div class="item">
+        <img src="IMG_9182.jpeg" alt="Sashinha">
+        <p>Sashinha</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
