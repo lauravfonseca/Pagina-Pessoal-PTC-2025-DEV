@@ -79,13 +79,13 @@ body {
 }
 
 .item {
-  width: 150px; /* Largura de cada item */
+  width: 190px; /* Largura de cada item */
   text-align: center;
 }
 
 .item img {
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%; /* Redondinho como no Spotify */
   object-fit: cover;
   transition: transform 0.2s ease;
