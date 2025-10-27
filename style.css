@@ -156,3 +156,8 @@ body {
   margin: 4px 0 0 0;
   color: #b3b3b3; /* Cor cinza do Spotify */
 }
+
+/* Ajuste para a foto de Viajar */
+.img-viajar {
+  object-position: 50% 80%; /* O primeiro valor é horizontal, o segundo é vertical */
+}
