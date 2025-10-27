@@ -161,3 +161,40 @@ body {
 .img-viajar {
   object-position: 50% 80%; /* O primeiro valor é horizontal, o segundo é vertical */
 }
+
+/* --- 4. Seção Música da Vida (Novo) --- */
+.musica-vida {
+  margin-top: 50px; /* Espaço da seção de cima */
+  padding-bottom: 50px; /* Espaço no fim da página */
+  text-align: center; /* Centraliza os títulos */
+}
+
+.musica-vida h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 5px; /* Menos espaço para o subtítulo */
+  text-align: left; /* Alinha o título principal à esquerda, como os outros */
+}
+
+.musica-vida .subtitulo-secao {
+  font-size: 0.9em;
+  color: #b3b3b3; /* Cor cinza do Spotify */
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: left; /* Alinha o subtítulo à esquerda */
+}
+
+/* Container para o player */
+.spotify-embed {
+  /* O player do Spotify já vem com 100% de largura */
+  max-width: 700px; /* Limita a largura máxima dele */
+  margin: 0 auto; /* Centraliza o container do player */
+}
+
+/* Isso garante que o player do Spotify fique bonito */
+.spotify-embed iframe {
+  border-radius: 12px; /* Deixa o player com cantos arredondados */
+  border: none;
+  width: 100%; /* Faz o player ocupar todo o espaço do container */
+  height: 152px; /* Altura padrão do player compacto */
+}
