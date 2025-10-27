@@ -45,8 +45,8 @@ body {
 }
 
 .item img {
-  width: 180px px;
-  height: 180px px;
+  width: 180px ;
+  height: 180px;
   border-radius: 50%;
   border: 3px solid white;
   object-fit: cover;
