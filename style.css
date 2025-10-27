@@ -113,13 +113,13 @@ body {
 }
 
 .item {
-  width: 210px; /* Largura de cada item */
+  width: 205px; /* Largura de cada item */
   text-align: center;
 }
 
 .item img {
-  width: 210px;
-  height: 210px;
+  width: 205px;
+  height: 205px;
   border-radius: 50%; /* Redondinho como no Spotify */
   object-fit: cover;
   transition: transform 0.2s ease;
