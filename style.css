@@ -209,7 +209,7 @@ body {
     font-size: 0.9em;
     color: #b3b3b3;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
@@ -230,14 +230,14 @@ body {
 .musica-vida-card .capa-musica {
     width: 100%; 
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .musica-vida-card .musica-descricao {
     font-size: 0.85em;
     color: #b3b3b3;
-    margin-top: 10px;
+    margin-top: 0 px;
     line-height: 1.4;
 }
 
