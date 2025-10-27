@@ -33,7 +33,7 @@ body {
 }
 
 .felicidade h2 {
-  font-size: 1.5em;
+  font-size: 2.0em;
   margin-bottom: 30px;
 }
 
@@ -58,6 +58,47 @@ body {
 }
 
 .item p {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+/* Nova seção: Cantores favoritos */
+.cantores {
+  margin-top: 60px;
+  padding: 50px 0;
+  background: linear-gradient(to bottom, #f5a6d6, #c9a7eb);
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cantores h2 {
+  font-size: 2.0em;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.3);
+}
+
+.cantores .itens {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.cantores .item img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.cantores .item img:hover {
+  transform: rotate(3deg) scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+  filter: brightness(1.15);
+}
+
+.cantores .item p {
   margin-top: 10px;
   font-size: 1em;
 }
