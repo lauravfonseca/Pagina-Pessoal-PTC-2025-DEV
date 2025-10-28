@@ -1,427 +1,335 @@
 /* --- Configuração Global (Tema Spotify) --- */
 body {
-  /* Cor de fundo principal do Spotify */
-  background-color: #121212; 
-  
-  /* Cor da fonte principal */
-  color: #ffffff; 
-  
-  /* Fonte mais parecida com a do Spotify */
-  font-family: 'Montserrat', sans-serif; 
-  
-  margin: 0;
-  padding: 0;
+  /* Cor de fundo principal do Spotify */
+  background-color: #121212; 
+  
+  /* Cor da fonte principal */
+  color: #ffffff; 
+  
+  /* Fonte mais parecida com a do Spotify */
+  font-family: 'Montserrat', sans-serif; 
+  
+  margin: 0;
+  padding: 0;
 
-  /* MODIFICAÇÃO: Garante que a página ocupe 100% da altura e não role */
-  height: 100vh;
-  overflow: hidden;
+  /* MODIFICAÇÃO: Garante que a página ocupe 100% da altura e não role */
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* --- NOVO: Layout Principal com Grid --- */
 .layout-container {
-  display: grid;
-  /* Define 2 colunas: 
-     1fr = O conteúdo principal (ocupa o espaço que sobrar)
-     300px = A sidebar da direita (tamanho fixo)
-  */
-  grid-template-columns: 1fr 300px;
-  width: 100vw;
-  height: 100vh; /* Ocupa 100% da altura da tela */
+  display: grid;
+  /* Define 2 colunas: 
+     1fr = O conteúdo principal (ocupa o espaço que sobrar)
+     300px = A sidebar da direita (tamanho fixo)
+  */
+  grid-template-columns: 1fr 300px;
+  width: 100vw;
+  height: 100vh; /* Ocupa 100% da altura da tela */
 }
 
 /* NOVO: Coluna principal que contém seu header e main */
 .coluna-principal {
-  /* Permite que SÓ esta coluna role, mantendo a sidebar fixa */
-  overflow-y: auto; 
-  height: 100vh;
+  /* Permite que SÓ esta coluna role, mantendo a sidebar fixa */
+  overflow-y: auto; 
+  height: 100vh;
 }
 
 /* NOVO: A sidebar da direita */
 .sidebar-direita {
-  background-color: #000;
-  padding: 20px;
-  overflow-y: auto; /* Permite que SÓ esta coluna role */
-  height: 100vh;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  box-sizing: border-box; /* Garante que o padding não quebre o layout */
+  background-color: #000;
+  padding: 20px;
+  overflow-y: auto; /* Permite que SÓ esta coluna role */
+  height: 100vh;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box; /* Garante que o padding não quebre o layout */
 }
 
 
 /* --- 1. Cabeçalho do Perfil (Novo) --- */
 .perfil-header {
-  /* O gradiente escuro do topo (como no seu print) */
-  background: linear-gradient(180deg, #4a2a1f 0%, #121212 100%);
-  
-  display: flex; /* Para alinhar a foto ao lado do texto */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 60px 40px 40px 40px; /* Espaçamento interno */
-  gap: 20px; /* Espaço entre a foto e o texto */
+  /* O gradiente escuro do topo (como no seu print) */
+  background: linear-gradient(180deg, #4a2a1f 0%, #121212 100%);
+  
+  display: flex; /* Para alinhar a foto ao lado do texto */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 60px 40px 40px 40px; /* Espaçamento interno */
+  gap: 20px; /* Espaço entre a foto e o texto */
 }
 
 .foto-perfil {
-  width: 240px; /* Tamanho da foto */
-  height: 240px;
-  border-radius: 50%; /* Deixa redonda */
-  object-fit: cover;
-  /* Sombra sutil que o Spotify usa */
-  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); 
+  width: 240px; /* Tamanho da foto */
+  height: 240px;
+  border-radius: 50%; /* Deixa redonda */
+  object-fit: cover;
+  /* Sombra sutil que o Spotify usa */
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5); 
 }
 
 .perfil-info {
-  text-align: left;
+  text-align: left;
 }
 
 .perfil-tipo {
-  font-size: 0.9em;
-  font-weight: 700;
-  margin: 0;
+  font-size: 0.9em;
+  font-weight: 700;
+  margin: 0;
 }
 
 .perfil-header h1 {
-  font-size: 5rem; /* Fonte bem grande */
-  font-weight: 900; /* Bem "gorda" (bold) */
-  margin: 10px 0;
-  letter-spacing: -2px; /* Espaço entre letras mais justo */
+  font-size: 5rem; /* Fonte bem grande */
+  font-weight: 900; /* Bem "gorda" (bold) */
+  margin: 10px 0;
+  letter-spacing: -2px; /* Espaço entre letras mais justo */
 }
 
 .perfil-stats {
-  font-size: 1.0em;
-  margin: 0;
-  color: #b3b3b3; /* Cinza claro do Spotify */
+  font-size: 1.0em;
+  margin: 0;
+  color: #b3b3b3; /* Cinza claro do Spotify */
 }
 
 /* --- Conteúdo Principal (Wrapper) --- */
 .conteudo-principal {
-  padding: 0 40px; /* Mesmo espaçamento lateral do header */
+  padding: 0 40px; /* Mesmo espaçamento lateral do header */
 }
 
 /* --- 2. Seção Felicidade (Re-estilizada) --- */
 .felicidade {
-  margin-top: 40px;
+  margin-top: 40px;
 }
 
 .felicidade h2 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
 .itens {
-  display: flex;
-  justify-content: flex-start; /* Alinha à esquerda */
-  flex-wrap: wrap;
-  gap: 25px; /* Espaçamento entre os círculos */
+  display: flex;
+  justify-content: flex-start; /* Alinha à esquerda */
+  flex-wrap: wrap;
+  gap: 25px; /* Espaçamento entre os círculos */
 }
 
 .item {
-  width: 205px; /* Largura de cada item */
-  text-align: center;
+  width: 205px; /* Largura de cada item */
+  text-align: center;
 }
 
 .item img {
-  width: 205px;
-  height: 205px;
-  border-radius: 50%; /* Redondinho como no Spotify */
-  object-fit: cover;
-  transition: transform 0.2s ease;
-  cursor: pointer;
+  width: 205px;
+  height: 205px;
+  border-radius: 50%; /* Redondinho como no Spotify */
+  object-fit: cover;
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .item img:hover {
-  transform: scale(1.05); /* Efeito de zoom sutil */
+  transform: scale(1.05); /* Efeito de zoom sutil */
 }
 
 .item p {
-  margin-top: 10px;
-  font-size: 0.9em;
-  font-weight: 700;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-weight: 700;
 }
 
 /* --- 3. Seção Cantores (Seu código, com pequenos ajustes) --- */
 .cantores {
-  margin-top: 50px;
-  padding-bottom: 50px; /* Espaço no fim da página */
-}
-
-.cantores h2 {
-  font-size: 1.5em;
-  margin-bottom: 25px;
-  font-weight: 700;
-}
-
-.lista-cantores {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Diminuí um pouco o espaço */
-}
-
-.cantor {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 10px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.cantor:hover {
-  background: rgba(255, 255, 255, 0.08); /* Fundo sutil no hover */
-  cursor: pointer;
-}
-
-.cantor img {
-  width: 120px; /* Ajustei o tamanho */
-  height: 120px;
-  border-radius: 8px; /* Cantos suaves */
-  object-fit: cover;
-}
-
-.cantor-info {
-  text-align: left;
-}
-
-.cantor-info h3 {
-  font-size: 1.3em;
-  margin: 0;
-  font-weight: 700;
-}
-
-.cantor-info p {
-  font-size: 1.0em;
-  margin: 4px 0 0 0;
-  color: #b3b3b3; /* Cor cinza do Spotify */
-}
-
-/* Ajuste para a foto de Viajar */
-.img-viajar {
-  object-position: 50% 80%; /* O primeiro valor é horizontal, o segundo é vertical */
-}
-
-
-/* ==== INÍCIO DO NOVO CÓDIGO CSS (COM COMENTÁRIO CORRETO) ==== */
-
-/* --- 5. NOVO: Seção Filmes Favoritos (estilo playlists) --- */
-.filmes-favoritos {
   margin-top: 50px;
   padding-bottom: 50px; /* Espaço no fim da página */
 }
 
-/* Cabeçalho da seção (Título + "Mostrar tudo") */
-.secao-header {
-  display: flex;
-  justify-content: space-between; /* Título na esquerda, link na direita */
-  align-items: center; /* Alinha verticalmente */
-  margin-bottom: 20px;
-}
-
-.secao-header h2 {
+.cantores h2 {
   font-size: 1.5em;
-  font-weight: 700;
-  margin: 0; /* Remove margens padrão */
-}
-
-.secao-header .link-mostrar-tudo {
-  color: #b3b3b3; /* Cinza claro do Spotify */
-  text-decoration: none;
-  font-size: 0.9em;
+  margin-bottom: 25px;
   font-weight: 700;
 }
-.secao-header .link-mostrar-tudo:hover {
-  text-decoration: underline; /* Sublinhado ao passar o mouse */
+
+.lista-cantores {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Diminuí um pouco o espaço */
 }
 
-/* Grid para os cards */
-.grid-midia {
-  display: grid;
-  /* Cria colunas automáticas: 
-     Ele tentará criar o máximo de colunas com 190px de largura
-     que couberem, e distribuirá o espaço igualmente.
-  */
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 24px; /* Espaço entre os cards */
-}
-
-/* O card do filme */
-.card-midia {
-  background-color: #1a1a1a; /* Fundo do card */
+.cantor {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
   border-radius: 8px;
-  padding: 16px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.cantor:hover {
+  background: rgba(255, 255, 255, 0.08); /* Fundo sutil no hover */
   cursor: pointer;
-  overflow: hidden; /* Garante que a imagem não vaze */
 }
 
-.card-midia:hover {
-  background-color: #282828; /* Cor mais clara ao passar o mouse */
+.cantor img {
+  width: 120px; /* Ajustei o tamanho */
+  height: 120px;
+  border-radius: 8px; /* Cantos suaves */
+  object-fit: cover;
 }
 
-.card-midia img {
-  width: 100%; /* Faz a imagem ocupar todo o card */
-  height: 190px; /* Altura fixa para a imagem */
-  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
-  border-radius: 4px; /* Cantos arredondados na imagem */
-  margin-bottom: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.cantor-info {
+  text-align: left;
 }
 
-.card-midia h3 {
-  font-size: 1.1em;
-  font-weight: 700;
+.cantor-info h3 {
+  font-size: 1.3em;
   margin: 0;
-  /* Trunca o texto se for muito grande */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; 
+  font-weight: 700;
 }
 
-.card-midia p {
-  font-size: 0.9em;
-  color: #b3b3b3;
+.cantor-info p {
+  font-size: 1.0em;
   margin: 4px 0 0 0;
-  /* Trunca a descrição se tiver mais de 2 linhas */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limite de 2 linhas */
-  -webkit-box-orient: vertical;  
+  color: #b3b3b3; /* Cor cinza do Spotify */
 }
 
-/* ==== FIM DO NOVO CÓDIGO CSS ==== */
-
+/* Ajuste para a foto de Viajar */
+.img-viajar {
+  object-position: 50% 80%; /* O primeiro valor é horizontal, o segundo é vertical */
+}
 
 /* --- 4. NOVO: Estilos da Sidebar Direita --- */
 .sidebar-direita h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    margin-bottom: 5px;
-    text-align: left;
-    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-top: 0;
 }
 
 .sidebar-direita .musica-artista {
-    font-size: 0.9em;
-    color: #b3b3b3;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: left;
+    font-size: 0.9em;
+    color: #b3b3b3;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .musica-vida-card {
-    background-color: #1a1a1a; 
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px; 
-    text-align: left; 
+    background-color: #1a1a1a; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+    text-align: left; 
 }
 
 .musica-vida-card.relacionados {
-    background-color: transparent; 
-    padding: 0;
-    margin-bottom: 0;
+    background-color: transparent; 
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .musica-vida-card .capa-musica {
-    width: 100%; 
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%; 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .musica-vida-card .musica-descricao {
-    font-size: 0.85em;
-    color: #b3b3b3;
-    margin-top: 0; /* Corrigido (estava '0 px;') */
-    line-height: 1.4;
+    font-size: 0.85em;
+    color: #b3b3b3;
+    margin-top: 0 px;
+    line-height: 1.4;
 }
 
 /* Estilo para a lista de itens relacionados */
 .lista-relacionados {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
 }
 
 .item-relacionado {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    padding: 5px; 
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 5px; 
+    border-radius: 8px;
 }
 
 .item-relacionado:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 .item-relacionado img {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px; 
-    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 4px; 
+    object-fit: cover;
 }
 
 .item-relacionado .info-relacionado {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
 .item-relacionado .info-relacionado p {
-    margin: 0;
-    font-size: 0.9em;
-    font-weight: 600;
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 600;
 }
 
 .item-relacionado .info-relacionado span {
-    font-size: 0.8em;
-    color: #b3b3b3;
+    font-size: 0.8em;
+    color: #b3b3b3;
 }
 
 /* --- NOVO: Responsividade --- */
 @media (max-width: 1024px) {
-  /* Em telas menores, volta a ser 1 coluna */
-  .layout-container {
-    grid-template-columns: 1fr; 
-    height: auto;
-  }
-  
-  .coluna-principal, .sidebar-direita {
-  D height: auto; /* Altura automática */
-    overflow-y: visible; /* Scroll normal */
-  }
+  /* Em telas menores, volta a ser 1 coluna */
+  .layout-container {
+    grid-template-columns: 1fr; 
+    height: auto;
+  }
+  
+  .coluna-principal, .sidebar-direita {
+    height: auto; /* Altura automática */
+    overflow-y: visible; /* Scroll normal */
+  }
 
-  /* Esconde a sidebar em telas pequenas */
-  .sidebar-direita {
-    display: none; 
-  }
+  /* Esconde a sidebar em telas pequenas */
+  .sidebar-direita {
+    display: none; 
+  }
 
-  body {
-    height: auto;
-    overflow: auto; /* Permite o scroll normal da página */
-  }
+  body {
+    height: auto;
+    overflow: auto; /* Permite o scroll normal da página */
+  }
 }
 
 @media (max-width: 768px) {
-  /* Em telas de celular, muda o perfil para coluna */
-  .perfil-header {
-      flex-direction: column;
-      text-align: center;
-  }
-  .perfil-info {
-      text-align: center;
-      margin-top: 20px;
-  }
-  .perfil-header h1 {
-      font-size: 3rem;
-  }
-  .itens {
-      justify-content: center;
-  }
-  
-  .conteudo-principal, .perfil-header {
-      padding-left: 20px;
-      padding-right: 20px;
-  }
+  /* Em telas de celular, muda o perfil para coluna */
+  .perfil-header {
+      flex-direction: column;
+      text-align: center;
+  }
+  .perfil-info {
+      text-align: center;
+      margin-top: 20px;
+  }
+  .perfil-header h1 {
+      font-size: 3rem;
+  }
+  .itens {
+      justify-content: center;
+  }
+  
+  .conteudo-principal, .perfil-header {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
 }
