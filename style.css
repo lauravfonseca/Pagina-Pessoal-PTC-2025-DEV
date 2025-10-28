@@ -390,36 +390,36 @@ body {
 }
 
 .site-footer {
-  margin-top: 70px; 
-  padding: 40px 0; 
-  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  margin-top: 70px; /* Espaço extra acima do rodapé */
+  padding: 40px 0; /* Espaçamento interno (sem padding lateral, pois .conteudo-principal já tem) */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória sutil */
   
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between; /* Links na esquerda, copyright na direita */
   align-items: center;
-  flex-wrap: wrap; 
-  gap: 20px; 
+  flex-wrap: wrap; /* Para telas pequenas, se não couber */
+  gap: 20px; /* Espaço entre os links e o copyright em telas pequenas */
 }
 
 .footer-links ul {
   display: flex;
-  flex-wrap: wrap; 
-  list-style: none;
+  flex-wrap: wrap; /* Links quebram a linha se não couberem */
+  list-style: none; /* Remove as bolinhas */
   margin: 0;
   padding: 0;
-  gap: 20px; 
+  gap: 20px; /* Espaço entre cada link */
 }
 
 .footer-links a {
-  color: #b3b3b3; 
-  text-decoration: none;
+  color: #b3b3b3; /* Cinza claro do Spotify */
+  text-decoration: none; /* Remove o sublinhado */
   font-size: 0.85em;
   font-weight: 400;
 }
 
 .footer-links a:hover {
   text-decoration: underline;
-  color: #ffffff; 
+  color: #ffffff; /* Fica branco ao passar o mouse */
 }
 
 .copyright p {
