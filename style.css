@@ -388,3 +388,43 @@ body {
   -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;  
 }
+
+.site-footer {
+  margin-top: 70px; 
+  padding: 40px 0; 
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.footer-links ul {
+  display: flex;
+  flex-wrap: wrap; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; 
+}
+
+.footer-links a {
+  color: #b3b3b3; 
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ffffff; 
+}
+
+.copyright p {
+  color: #b3b3b3;
+  font-size: 0.85em;
+  font-weight: 400;
+  margin: 0;
+}
