@@ -333,3 +333,86 @@ body {
       padding-right: 20px;
   }
 }
+
+/* --- 5. NOVO: Seção Filmes Favoritos (estilo playlists) --- */
+.filmes-favoritos {
+  margin-top: 50px;
+  padding-bottom: 50px; /* Espaço no fim da página */
+}
+
+/* Cabeçalho da seção (Título + "Mostrar tudo") */
+.secao-header {
+  display: flex;
+  justify-content: space-between; /* Título na esquerda, link na direita */
+  align-items: center; /* Alinha verticalmente */
+  margin-bottom: 20px;
+}
+
+.secao-header h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0; /* Remove margens padrão */
+}
+
+.secao-header .link-mostrar-tudo {
+  color: #b3b3b3; /* Cinza claro do Spotify */
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+.secao-header .link-mostrar-tudo:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Grid para os cards */
+.grid-midia {
+  display: grid;
+  /* Cria colunas automáticas responsivas */
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 24px; /* Espaço entre os cards */
+}
+
+/* O card do filme */
+.card-midia {
+  background-color: #1a1a1a; /* Fundo do card */
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  overflow: hidden; /* Garante que a imagem não vaze */
+}
+
+.card-midia:hover {
+  background-color: #282828; /* Cor mais clara ao passar o mouse */
+}
+
+.card-midia img {
+  width: 100%; /* Faz a imagem ocupar todo o card */
+  height: 190px; /* Altura fixa para a imagem */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  border-radius: 4px; /* Cantos arredondados na imagem */
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-midia h3 {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin: 0;
+  /* Trunca o texto se for muito grande */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.card-midia p {
+  font-size: 0.9em;
+  color: #b3b3b3;
+  margin: 4px 0 0 0;
+  /* Trunca a descrição se tiver mais de 2 linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limite de 2 linhas */
+  -webkit-box-orient: vertical;  
+}
